@@ -1,69 +1,81 @@
-import { useContext,useEffect } from "react";
+import { useContext,useEffect,useState} from "react";
 import './styles.scss';
 import Quiz from '../quiz';
-import Profile from '../../components/profile'
 import GlobalStateContext from "../../context/GlobalStateContext";
+import Profile from "../../components/profile";
 
 const Home = () =>{ 
 
-  const profile = useContext(GlobalStateContext);
-  const identificacao = useContext(GlobalStateContext)
-  const setDataNascimento = useContext(GlobalStateContext)
-  const setIdentificacao = useContext(GlobalStateContext)
-  const dataNascimento = useContext(GlobalStateContext)
+  const identificacao = useContext(GlobalStateContext);
+  const setIdentificacao = useContext(GlobalStateContext);
+  const dataNascimento = useContext(GlobalStateContext);
+  const setDataNascimento = useContext(GlobalStateContext);
 
   useEffect(() => {
-    onClickLogin();
+
+onClickLogin();
   }, []);
 
 
 const onChangeIdentificacao = (e) =>{
-  var variavel = e.target.id;
-    setIdentificacao({value: variavel});
+ setIdentificacao(e.target.value)
 }
 
 const handleData = (e) =>{
-  setDataNascimento({value: e.target.value});
+  setDataNascimento(e.target.value)
 }
 const onClickNext = () =>{
   console.log(identificacao,dataNascimento)
 }
+
 const onClickLogin = () =>{
-  console.log(profile)
+
+document.getElementById("btnSubmit").onClick = function() {
+  console.log(identificacao,dataNascimento)
+
+  var radios = document.getElementsByName("identificacao");
+  for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+          console.log("Escolheu: " + radios[i].value);
+      }
+  }
+};
 }
- 
   return (
-    <div>
-      <h1>Você se identifica como?</h1>   
-<input 
-type="radio" 
-id="mulherCis" 
-name="identificacao" 
-value={identificacao}
-onChange={onChangeIdentificacao}/>
-<label for="mulherCis">Mulher Cis</label>
+<div className="body">
+<Profile />   
 
-<input
-type="radio"
-id="mulherTrans"
-name="identificacao"
-value={identificacao}
-onChange={onChangeIdentificacao}/>
-<label for="mulherTrans">Mulher Trans</label>
+<fieldset>
+      <div class="form__radios">
+      <legend>Como você se identifica?</legend>
 
-<label for="dataNascimento">Data Nascimento</label>
+        <div class="form__radio">
+          <label for="mulherCis">Mulher Cis</label>
+          <input checked id="mulherCis" type="radio"
+            name="identificacao" 
+            value="mulherTrans"
+            onChange={onChangeIdentificacao}/>
+        </div>
 
-<input 
-type="date"
- id="anoNasc" 
- name="Data de nascimento" 
- value={dataNascimento}
- onChange={handleData}/>
-<button onClick={onClickNext}>Próximo</button>
-<button onClick={onClickLogin}>Logar</button>
+        <div class="form__radio">
+          <label for="mulherCis">Mulher Trans</label>
+          <input id="mulherCis" type="radio" name="identificacao" 
+          value="mulherTrans" onChange={onChangeIdentificacao}/>
+        </div>
 
-<Profile /> 
-<Quiz />
+        <label for="dataNascimento">Data Nascimento</label>
+        <input 
+        type="date"
+        id="anoNasc" 
+        name="Data de nascimento" 
+        value={dataNascimento}
+        onChange={handleData}/>
+      <input type="button" className="button" id="btnSubmit" value="Submit me!" onClick={onClickLogin}/>
+
+      </div>
+
+    </fieldset>
+
     </div>
   );
 }

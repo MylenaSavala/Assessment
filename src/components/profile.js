@@ -1,32 +1,29 @@
-import {useState, useEffect, useContext} from 'react';
-import axios from 'axios';
+import {useEffect, useContext} from 'react';
 import GlobalStateContext from "../context/GlobalStateContext";
 
 const Profile = () =>{ 
-const setProfile = useContext(GlobalStateContext);
-const profile = useContext(GlobalStateContext)
-useEffect(() => {
-    getProfile();
-  }, []);
 
-  const getProfile = async () => {
-    try {
-    const response = await axios.get(`https://randomuser.me/api/`)
-    setProfile(response.data.results)
-    alert("Pegamos os dados")
-   }
-   catch (error) {
-       alert("Algo deu errado, tente novamente mais tarde")
-   }
-}
+  const profile = useContext(GlobalStateContext);
+
+useEffect(() => {
+
+    }, [profile]);
+
+      const showProfile = profile&&profile.profile[0]&&profile.profile[0]
+      .map((perfil)=>{
+        return (
+        <div 
+        key={perfil[0].name.firts}>
+            <img src={`${perfil[0].picture.medium}`} />
+            <h1>{`${perfil[0].name.first}`}</h1>
+        </div>
+        )
+      })
   return (
    <div>
- 
-<h1>{`${profile[0].name.first}`}</h1>
-
-<img src={`${profile[0].picture.medium}`} />
-
-   </div>
+     <h3>section profile</h3>
+     <h1>{`${profile&&profile.profile[0]&&profile.profile[0].name.first}`}</h1>  
+      </div>
   );
 }
 
