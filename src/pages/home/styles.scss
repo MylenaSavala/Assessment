@@ -1,5 +1,78 @@
 $color: rgb(187, 133, 133);
+$color-background: rgb(226, 217, 217);
+$font: Helvetica, sans-serif;
+$size:100vh;
+$marginzero: 0px 0px 0px 0px;
+
+
 
 h1 {
-  color: $color;
+  color:$color;
+  font-family: $font;
+}
+
+.body{
+  height:$size;
+  margin:$marginzero;
+  padding:$marginzero;
+  background-color: $color-background;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.form__radios {
+  display: grid;
+  gap: 1em;
+  background-color: $color;
+  width:50vh;
+  justify-items: center;
+}
+
+.form__radio {
+  align-items: center;
+  background-color: #fefdfe;
+  border-radius: 1em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+  display: flex;
+  padding: 1em;
+  width:34vh;
+}
+
+.form__radio label {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  gap: 1em;
+}
+
+fieldset {
+  background-color:snow;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height:65vh;
+
+}
+
+input {
+  border: 0;
+  color: inherit;
+  font: inherit;
+}
+
+
+.button {
+  align-items: center;
+  background-color: green;
+  border-radius: 999em;
+  color: #fff;
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  padding-block: 0.75em;
+  padding-inline: 1em;
+  transition: 0.3s;
 }

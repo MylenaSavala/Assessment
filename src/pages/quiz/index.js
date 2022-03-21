@@ -50,8 +50,6 @@ function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
 
-
-
   function handleAnswer(isCorrect) {
     if (isCorrect) {
       setScore(score + 10);
