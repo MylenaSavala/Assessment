@@ -1,49 +1,41 @@
 import { useContext,useEffect,useState} from "react";
 import './styles.scss';
-import Quiz from '../quiz';
+import { useNavigate } from "react-router-dom";
 import GlobalStateContext from "../../context/GlobalStateContext";
-import Profile from "../../components/profile";
+import { goToCena } from "../../Router/coordinator";
 
 const Home = () =>{ 
 
-  const identificacao = useContext(GlobalStateContext);
-  const setIdentificacao = useContext(GlobalStateContext);
-  const dataNascimento = useContext(GlobalStateContext);
-  const setDataNascimento = useContext(GlobalStateContext);
+  const {data} = useContext(GlobalStateContext);
+  const dataNascimento=data.dataNascimento;
+  const identificacao=data.identificacao;
+  const navigation = useNavigate();
 
   useEffect(() => {
-
-onClickLogin();
+    onChangeInputButtonDisabled()
   }, []);
+
+const onChangeInputButtonDisabled =()=>{
+  var input = document.querySelector('#btnSubmit')
+  input.disabled=true;
+}
+const onChangeInputButton =()=>{
+  var input = document.querySelector('#btnSubmit')
+  input.disabled=false;
+}
 
 
 const onChangeIdentificacao = (e) =>{
- setIdentificacao(e.target.value)
+ data.setIdentificacao(e.target.value)
 }
 
 const handleData = (e) =>{
-  setDataNascimento(e.target.value)
-}
-const onClickNext = () =>{
-  console.log(identificacao,dataNascimento)
+  data.setDataNascimento(e.target.value)
+  onChangeInputButton()
 }
 
-const onClickLogin = () =>{
-
-document.getElementById("btnSubmit").onClick = function() {
-  console.log(identificacao,dataNascimento)
-
-  var radios = document.getElementsByName("identificacao");
-  for (var i = 0; i < radios.length; i++) {
-      if (radios[i].checked) {
-          console.log("Escolheu: " + radios[i].value);
-      }
-  }
-};
-}
   return (
 <div className="body">
-<Profile />   
 
 <fieldset>
       <div class="form__radios">
@@ -70,10 +62,8 @@ document.getElementById("btnSubmit").onClick = function() {
         name="Data de nascimento" 
         value={dataNascimento}
         onChange={handleData}/>
-      <input type="button" className="button" id="btnSubmit" value="Submit me!" onClick={onClickLogin}/>
-
+      <input type="button" className="button" id="btnSubmit" value="PRÓXIMO" onClick={() =>goToCena(navigation)}/>
       </div>
-
     </fieldset>
 
     </div>

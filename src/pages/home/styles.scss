@@ -15,13 +15,17 @@ h1 {
   height:$size;
   margin:$marginzero;
   padding:$marginzero;
-  background-color: $color-background;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
+.Container {
+  height:65vh;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+    padding: 1em;
+    width:34vh;
+    height:20vh;
+    padding:$marginzero;
+  }
+  
 
 .form__radios {
   display: grid;

@@ -1,9 +1,14 @@
 import Home from './pages/home';
+import GlobalState from "./context/GlobalState";
+import { Router } from  "./Router/Router";
+
 
 function App() {
   return (
     <div>
-      <Home />
+    <GlobalState>
+      <Router />
+    </GlobalState>
     </div>
   );
 }
