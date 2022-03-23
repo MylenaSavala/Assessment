@@ -3,32 +3,31 @@ import GlobalStateContext from "../../context/GlobalStateContext";
 
 function Result() {
 
+  // const [score, setScore] = useState(0);
+  // const [showScore, setShowScore] = useState(false);
+  // const [currentQuestion, setCurrentQuestion] = useState(0);
 
-  const [score, setScore] = useState(0);
-  const [showScore, setShowScore] = useState(false);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
 
+  // function handleAnswer(isCorrect) {
+  //   if (isCorrect) {
+  //     setScore(score + 10);
+  //   }else if (isCorrect===false){
+  //     setScore(score - 10);
+  //   }else{
+  //     setScore(score);
+  //   }
 
-  function handleAnswer(isCorrect) {
-    if (isCorrect) {
-      setScore(score + 10);
-    }else if (isCorrect===false){
-      setScore(score - 10);
-    }else{
-      setScore(score);
-    }
-
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      setShowScore(true);
-    }
-  }
+  //   const nextQuestion = currentQuestion + 1;
+  //   if (nextQuestion < questions.length) {
+  //     setCurrentQuestion(nextQuestion);
+  //   } else {
+  //     setShowScore(true);
+  //   }
+  // }
 
 return (
   <div className="app">
-  {showScore ? (
+  {/* {showScore ? (
     <div className="score-section">
       Você pontuou {score} de {questions.length}
     </div>
@@ -56,7 +55,7 @@ return (
         )}
       </div>
     </>
-  )}
+  )} */}
 </div>
     )
 }

@@ -1,5 +1,6 @@
 import { useState,useContext } from "react";
 import GlobalStateContext from "../../context/GlobalStateContext";
+import '../../styles/styles.scss'
 
 function Quiz() {
 
@@ -83,7 +84,6 @@ return (
           {questions[currentQuestion].questionText}
         </div>
       </div>
-
       <div className="answer-section">
         {questions[currentQuestion].answerOptions.map(
           (answerOption, index) => (
@@ -95,6 +95,8 @@ return (
             </button>
           )
         )}
+{score}
+
       </div>
     </>
   )}

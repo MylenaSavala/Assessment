@@ -1,28 +1,43 @@
 import {useEffect, useContext} from 'react';
 import GlobalStateContext from "../context/GlobalStateContext";
+import '../styles/styles.scss';
+
 
 const Profile = () =>{ 
 
-  const profile = useContext(GlobalStateContext);
+  const {data} = useContext(GlobalStateContext);
+
+const profile=data.profile;
+const dataNascimento=data.dataNascimento;
+const identificacao=data.identificacao;
 
 useEffect(() => {
 
-    }, [profile]);
+    }, [data]);
 
-      const showProfile = profile&&profile.profile[0]&&profile.profile[0]
+      const showProfile = profile
       .map((perfil)=>{
         return (
         <div 
-        key={perfil[0].name.firts}>
-            <img src={`${perfil[0].picture.medium}`} />
-            <h1>{`${perfil[0].name.first}`}</h1>
+        key={perfil.name.firts}>
+          <div className='iconProfile'>
+            <img src={`${perfil.picture.medium}`} />
+            <h3>{`${perfil.name.first} `}
+           {`${perfil.name.last}`}</h3>
+           </div>
+           <div className='iconProfile'>
+           <h5> {dataNascimento}</h5>
+            <h5> {identificacao}</h5>
+           </div>
+           
+
+
         </div>
         )
       })
   return (
-   <div>
-     <h3>section profile</h3>
-     <h1>{`${profile&&profile.profile[0]&&profile.profile[0].name.first}`}</h1>  
+   <div className='ContainerProfile'>
+  {showProfile}
       </div>
   );
 }
