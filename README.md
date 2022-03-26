@@ -2,10 +2,13 @@ O objetivo do Assessment é um projeto com objetivo de orientar as participantes
 Criado em React do zero a aplicação conta com 3 cenas: 
 Cena 1 - A cena inicial explica o objetivo da página, nesta cena a candidata seleciona se se identifica como Mulher Cis ou Mulher Trans, um Input de data que captura a data de nascimento e contém um botão de próximo para passar para a próxima etapa.
 b. A cena de perguntas do quiz exibe uma pergunta por vez. As perguntas utilizam um rádio button. 
-c. A última cena exibe o resultado da aluna e verifica se está mais propensa a um perfil de desenvolvedora Front-end ou mais propensa ao perfil de desenvolvedora Back-end. Quanto mais próximo a 50 pontos mais propenso ao FE, e quanto mais próximo a     -50 mais propenso ao BE.
+c. A última cena exibe o resultado da aluna e verifica se está mais propensa a um perfil de desenvolvedora Front-end ou mais propensa ao perfil de desenvolvedora Back-end. Quanto mais próximo a 50 pontos mais propenso ao FE, e quanto mais próximo a -50 mais propenso ao BE.
 A aplicação conta com as seguintes ferramentas:
+
 •	SCSS;
+
 •	HTML
+
 •	JavaScript
 •	Componentização;
 •	Busca em API para preenchimento de foto e nome da candidata;
