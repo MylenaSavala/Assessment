@@ -3,6 +3,7 @@ import './styles.scss';
 import { useNavigate } from "react-router-dom";
 import GlobalStateContext from "../../context/GlobalStateContext";
 import { goToCena } from "../../Router/coordinator";
+import Woman from '../../img/woman.svg'
 
 const Home = () =>{ 
 
@@ -24,7 +25,6 @@ const onChangeInputButton =()=>{
   input.disabled=false;
 }
 
-
 const onChangeIdentificacao = (e) =>{
  data.setIdentificacao(e.target.value)
 }
@@ -36,14 +36,23 @@ const handleData = (e) =>{
 
   return (
 <div className="body">
+<div className="cardHome card-5">
+  <section>
+  <img src={Woman} /> <p>Teste Perfil Desenvolvedora</p>
+  </section>
+  <article>
+  <p>O objetivo é identificar de acordo com suas escolhas se o seu perfil é para Desenvolvedora FrontEnd ou Desenvolvedora BackEnd</p>
+<p>Para realização do Quiz preencha os campos.</p>
 
-<fieldset>
-      <div class="form__radios">
-      <legend>Como você se identifica?</legend>
+</article>
+    <div className="cardHome">
+
+    <h2 class="card__titleHome">Como você se identifica?</h2>
+
 
         <div class="form__radio">
           <label for="mulherCis">Mulher Cis</label>
-          <input checked id="mulherCis" type="radio"
+          <input  id="mulherCis" type="radio"
             name="identificacao" 
             value="mulherTrans"
             onChange={onChangeIdentificacao}/>
@@ -64,7 +73,8 @@ const handleData = (e) =>{
         onChange={handleData}/>
       <input type="button" className="button" id="btnSubmit" value="PRÓXIMO" onClick={() =>goToCena(navigation)}/>
       </div>
-    </fieldset>
+   
+    </div>
 
     </div>
   );

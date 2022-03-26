@@ -1,9 +1,17 @@
 import { useState,useContext } from "react";
 import GlobalStateContext from "../../context/GlobalStateContext";
-import '../../styles/styles.scss'
+import '../../styles/styles.scss';
+import {goToResult} from "../../Router/coordinator";
+import { useNavigate } from "react-router-dom";
+
+
 
 function Quiz() {
 
+  const navigation = useNavigate();
+  const {data} = useContext(GlobalStateContext);
+
+ 
   const questions = [
     {
       questionText: "Prefiro fotografar lugares do que ler livros",
@@ -51,6 +59,9 @@ function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
 
+  const setResultQuiz = ()=>{
+    data.setResult(score)
+  }
   function handleAnswer(isCorrect) {
     if (isCorrect) {
       setScore(score + 10);
@@ -66,13 +77,14 @@ function Quiz() {
     } else {
       setShowScore(true);
     }
+    setResultQuiz()
   }
 
 return (
   <div className="app">
   {showScore ? (
     <div className="score-section">
-      Você pontuou {score} de {questions.length}
+      Você pontuou {score} de 50
     </div>
   ) : (
     <>
@@ -91,15 +103,18 @@ return (
               onClick={() => handleAnswer(answerOption.isCorrect)}
               key={index}
             >
-              {answerOption.answerText}
+             {answerOption.answerText}
             </button>
           )
         )}
-{score}
+  Pontuação Atual: {score}
 
       </div>
     </>
   )}
+  
+   <input type="button" className="buttonResul" id="btnResult" value="Ver Resultados" onClick={() =>goToResult(navigation)}/>
+ 
 </div>
     )
 }

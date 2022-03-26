@@ -18,27 +18,33 @@ useEffect(() => {
       const showProfile = profile
       .map((perfil)=>{
         return (
-        <div 
+        <div class="box"
         key={perfil.name.firts}>
-          <div className='iconProfile'>
-            <img src={`${perfil.picture.medium}`} />
+          <div className='card'>
+          <div class="imgBx">
+            <img src={`${perfil.picture.large}`} />
+            </div>
+            <div class="details">
+
             <h3>{`${perfil.name.first} `}
            {`${perfil.name.last}`}</h3>
            </div>
-           <div className='iconProfile'>
-           <h5> {dataNascimento}</h5>
-            <h5> {identificacao}</h5>
            </div>
-           
-
+    
 
         </div>
         )
       })
   return (
-   <div className='ContainerProfile'>
-  {showProfile}
-      </div>
+<div className='cardProfile'>
+
+{showProfile}
+<div className='descricaoProfile'>
+<p>{dataNascimento} </p>
+<p> - {identificacao}</p>
+</div>
+
+</div>
   );
 }
 
