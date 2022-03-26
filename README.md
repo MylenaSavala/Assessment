@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+O objetivo do Assessment é um projeto com objetivo de orientar as participantes a escolherem seu perfil de desenvolvedora (FrontEnd ou BackEnd) de acordo com suas escolhas pessoais.
+Criado em React do zero a aplicação conta com 3 cenas: 
+Cena 1 - A cena inicial explica o objetivo da página, nesta cena a candidata seleciona se se identifica como Mulher Cis ou Mulher Trans, um Input de data que captura a data de nascimento e contém um botão de próximo para passar para a próxima etapa.
+b. A cena de perguntas do quiz exibe uma pergunta por vez. As perguntas utilizam um rádio button. 
+c. A última cena exibe o resultado da aluna e verifica se está mais propensa a um perfil de desenvolvedora Front-end ou mais propensa ao perfil de desenvolvedora Back-end. Quanto mais próximo a 50 pontos mais propenso ao FE, e quanto mais próximo a     -50 mais propenso ao BE.
+A aplicação conta com as seguintes ferramentas:
+•	SCSS;
+•	HTML
+•	JavaScript
+•	Componentização;
+•	Busca em API para preenchimento de foto e nome da candidata;
+•	Context API;
+•	Router;
+•	useNavigate;
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![image](https://user-images.githubusercontent.com/79485071/160219890-a3e44d4a-5745-472f-b3d9-70cbc90b51f4.png)
+![image](https://user-images.githubusercontent.com/79485071/160219929-98b9c7c0-eafb-4c2a-985e-8d0bd933a33b.png)
+![image](https://user-images.githubusercontent.com/79485071/160219955-59946166-fd8b-40ae-9169-722ecf979283.png)
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Link do projeto: https://rhetorical-amount.surge.sh/
