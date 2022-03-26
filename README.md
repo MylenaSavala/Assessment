@@ -10,11 +10,17 @@ A aplicação conta com as seguintes ferramentas:
 •	HTML
 
 •	JavaScript
+
 •	Componentização;
+
 •	Busca em API para preenchimento de foto e nome da candidata;
+
 •	Context API;
+
 •	Router;
+
 •	useNavigate;
+
 
 
 ![image](https://user-images.githubusercontent.com/79485071/160219890-a3e44d4a-5745-472f-b3d9-70cbc90b51f4.png)
